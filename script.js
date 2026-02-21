@@ -17,3 +17,20 @@ function submitForm() {
 }
 
 console.log("Portfolio site loaded.");
+
+// Copy Email to Clipboard Function
+function copyEmail() {
+  const myEmail = "sujeetsingh8077@gmail.com";
+  
+  // Use the Clipboard API to copy the text
+  navigator.clipboard.writeText(myEmail)
+    .then(() => {
+      // Success feedback
+      alert("Success! My email address (" + myEmail + ") has been copied to your clipboard.");
+    })
+    .catch(err => {
+      // Fallback if the browser blocks the copy action
+      console.error("Failed to copy text: ", err);
+      alert("Oops! Auto-copy failed. My email is: " + myEmail);
+    });
+}
